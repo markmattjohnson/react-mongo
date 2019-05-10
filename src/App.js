@@ -1,19 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { getCards } from "./services";
 
 export default class App extends Component {
   state = {
-    cards: [],
-  }
+    cards: []
+  };
 
   componentDidMount() {
-    fetch('/cards')
-      .then(res => res.json())
+    this.loadCards();
+  }
+
+  loadCards() {
+    getCards()
       .then(data => this.setState({ cards: data }))
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   }
 
   render() {
-    const { cards } = this.state
+    const { cards } = this.state;
 
     return (
       <main>
@@ -24,6 +28,6 @@ export default class App extends Component {
           ))}
         </ul>
       </main>
-    )
+    );
   }
 }
