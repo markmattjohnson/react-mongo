@@ -9,3 +9,22 @@ body {
   color: darkslategray;
   background: papayawhip;
 }
+
+.card-list {
+  display: grid;
+  gap: 10px;
+}
+
+.card {
+  padding: 20px;
+  background: white;
+  border-radius: 6px;
+}
+
+.tag {
+  background: hotpink;
+  padding: 1px 4px;
+  border-radius: 2px;
+  color: white;
+  margin-right: 4px;
+}

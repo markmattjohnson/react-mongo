@@ -1,9 +1,3 @@
-import React from "react";
-
-export default function Card({ title }) {
-  return <section className="card">{title}</section>;
-}
-
 const mongoose = require("mongoose");
 
 const cardSchema = new mongoose.Schema({
@@ -11,7 +5,9 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: true,
     get: value => value.toUpperCase()
-  }
+  },
+  description: String,
+  tags: [String]
 });
 
 module.exports = mongoose.model("Card", cardSchema);

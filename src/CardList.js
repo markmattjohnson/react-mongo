@@ -5,7 +5,7 @@ export default function CardList({ cards }) {
   return (
     <section className="card-list">
       {cards.map(card => (
-        <Card key={card._id} title={card.title} />
+        <Card key={card._id} {...card} />
       ))}
     </section>
   );
