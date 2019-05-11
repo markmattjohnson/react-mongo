@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cardSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
     get: value => value.toUpperCase()
   },
   description: String,
