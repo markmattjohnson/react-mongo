@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import { getCards, postCard } from "../services";
+import { getCards, postCard, getFromLocal, setToLocal } from "../services";
 import CardList from "./CardList";
 import Form from "./Form";
 
 export default class App extends Component {
   state = {
-    cards: []
+    cards: getFromLocal("cards") || []
   };
 
   componentDidMount() {
     this.loadCards();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.cards !== this.state.cards) {
+      setToLocal("cards", this.state.cards);
+    }
   }
 
   loadCards() {
@@ -24,7 +30,7 @@ export default class App extends Component {
     const { cards } = this.state;
 
     postCard(data)
-      .then(newCard => this.setState({ cards: [newCard, ...cards] }))
+      .then(newCard => this.setState({ cards: [...cards, newCard] }))
       .catch(error => console.log(error));
   }
 

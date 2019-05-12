@@ -7,7 +7,11 @@ const cardSchema = new mongoose.Schema({
     get: value => value.toUpperCase()
   },
   description: String,
-  tags: [String]
+  tags: [String],
+  bookmarked: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = mongoose.model("Card", cardSchema);

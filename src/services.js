@@ -11,3 +11,14 @@ export function postCard(data) {
     body: JSON.stringify(data)
   }).then(res => res.json());
 }
+export function getFromLocal(name) {
+  try {
+    return JSON.parse(localStorage.getItem(name));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function setToLocal(name, data) {
+  localStorage.setItem(name, JSON.stringify(data));
+}
