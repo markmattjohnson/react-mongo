@@ -6,8 +6,8 @@ body {
   margin: 0;
   padding: 20px;
   font-family: sans-serif;
-  color: darkslategray;
-  background: papayawhip;
+  color: darkslategrey;
+  background: mediumseagreen;
 }
 
 input,
@@ -18,7 +18,7 @@ button {
 button {
   padding: 10px 20px;
   border: none;
-  background: plum;
+  background: skyblue;
   color: white;
   font-weight: bold;
   border-radius: 3px;

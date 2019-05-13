@@ -6,7 +6,6 @@ export default function Card({ title, description, tags }) {
     <section className="card">
       <h3>{title}</h3>
       <p>{description}</p>
-      {/* {tags.map((tag, index) => ( <Tag key={index}>{tag}</Tag>))} */}
       {tags && tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
     </section>
   );
